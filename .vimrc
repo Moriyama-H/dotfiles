@@ -80,3 +80,11 @@ inoremap ' ''<LEFT>
 " open vertical right side
 let g:netrw_altv = 1
 
+" C-t で新規タブを開く
+nnoremap <C-t> :tabnew<cr> 
+"C-w でタブを閉じる
+nnoremap <C-w> :tabclose 
+"C-tab で1つ右のタブを開く
+nnoremap <C-tab> :tabnext<cr> 
+"Ctrl-Shift-tab で1つ左のタブを開く
+nnoremap <C-S-tab> :tabprevious<cr> 
