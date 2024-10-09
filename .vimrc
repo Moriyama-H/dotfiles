@@ -84,7 +84,10 @@ let g:netrw_altv = 1
 " nnoremap <C-l> :tabnext<CR>
 nnoremap <C-S-Tab> :tabprevious<CR>
 nnoremap <C-Tab> :tabnext<CR>
+" set gt/gT command for normal/terminal mode
 nnoremap <C-h> gT
 nnoremap <C-l> gt
+tnoremap <C-h> gT
+tnoremap <C-l> gt
 
 nnoremap <C-n> :tabnew<Space>
