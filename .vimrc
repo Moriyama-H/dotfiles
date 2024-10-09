@@ -80,6 +80,11 @@ inoremap ' ''<LEFT>
 " open vertical right side
 let g:netrw_altv = 1
 
-nmap <C-h> :tabprevious<CR>
-nmap <C-l> :tabnext<CR>
+" nnoremap <C-h> :tabprevious<CR>
+" nnoremap <C-l> :tabnext<CR>
+nnoremap <C-S-Tab> :tabprevious<CR>
+nnoremap <C-Tab> :tabnext<CR>
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+
 nnoremap <C-n> :tabnew<Space>
