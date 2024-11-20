@@ -79,11 +79,11 @@ inoremap ' ''<LEFT>
 
 " open vertical right side
 let g:netrw_altv = 1
+let g:netrw_preview = 1
 
-" nnoremap <C-h> :tabprevious<CR>
-" nnoremap <C-l> :tabnext<CR>
 nnoremap <C-S-Tab> :tabprevious<CR>
 nnoremap <C-Tab> :tabnext<CR>
+
 " set gt/gT command for normal/terminal mode
 nnoremap <C-h> gT
 nnoremap <C-l> gt
@@ -92,9 +92,11 @@ tnoremap <C-l> gt
 
 nnoremap <C-n> :tabnew<Space>
 
-" sndwich
+" sandwich
 Plugin 'machakann/vim-sandwich'
 
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
+set spell
+set spelllang=en,cjk
