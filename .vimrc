@@ -91,3 +91,10 @@ tnoremap <C-h> gT
 tnoremap <C-l> gt
 
 nnoremap <C-n> :tabnew<Space>
+
+" sndwich
+Plugin 'machakann/vim-sandwich'
+
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
