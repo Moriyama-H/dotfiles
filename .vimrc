@@ -98,5 +98,11 @@ Plugin 'machakann/vim-sandwich'
 " markdown
 Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
-set spell
+" set spell
 set spelllang=en,cjk
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'minimalist'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
