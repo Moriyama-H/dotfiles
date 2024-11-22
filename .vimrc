@@ -100,6 +100,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
 " let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 " set spell
 set spelllang=en,cjk
