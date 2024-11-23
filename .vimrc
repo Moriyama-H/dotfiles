@@ -50,6 +50,7 @@ syntax enable
 set number
 " set background=dark
 colorscheme iceberg
+set termguicolors
 set tabstop=4
 set autoindent
 set expandtab
