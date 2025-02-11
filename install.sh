@@ -41,3 +41,17 @@ if [ ! -f ~/term_color ]; then
     cp $DOTFILES/term_color.template ~/term_color
 fi
 
+# Neovim configuration setup (nvim directory)
+if [ ! -L $HOME/.config/nvim ]; then
+    # Create .config directory if it doesn't exist
+    mkdir -p ~/.config
+
+    # Create symlink for nvim config directory
+    ln -snfv ${PWD}/nvim ~/.config/
+fi
+
+# Deno installation for neovim-ddc
+if ! command -v deno &> /dev/null; then
+    echo "Installing Deno..."
+    curl -fsSL https://deno.land/install.sh | sh
+fi
