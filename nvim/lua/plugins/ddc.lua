@@ -3,6 +3,7 @@ return {
     "Shougo/ddc.vim",
     dependencies = {
       "vim-denops/denops.vim",  -- 必須依存プラグイン
+	  "vim-denops/denops-helloworld.vim",
       "Shougo/ddc-ui-native",   -- UI の設定
       "Shougo/ddc-source-around", -- 周辺の単語を補完候補
 	  "Shougo/ddc-source-shell-native",
@@ -20,12 +21,14 @@ return {
       "mattn/vim-lsp-settings", -- lsp server autoset :LspInstallServer
       "shun/ddc-source-vim-lsp",
       "neovim/nvim-lspconfig",
+
+      'vim-skk/skkeleton',
     },
     config = function()
       vim.fn["ddc#custom#patch_global"]("ui", "native")
 
       -- 使用する補完ソース
-      vim.fn["ddc#custom#patch_global"]("sources", { "vim-lsp", "around", "file"})
+      vim.fn["ddc#custom#patch_global"]("sources", { "vim-lsp", "around", "file", "skkeleton"})
 
       -- ソースごとのオプション設定
       vim.fn["ddc#custom#patch_global"]("sourceOptions", {
@@ -45,6 +48,14 @@ return {
 		file = {
 		  mark = "|File|",
 		  forceCompletionPattern = {[[\S\\\S*]]},
+		},
+		skkeleton = {
+			mark = "|SKK|",
+			matchers = {},
+			sorters = {},
+			converters = {},
+			isVolatile = true,
+			minAutoCompleteLength = 1,
 		},
       })
 
