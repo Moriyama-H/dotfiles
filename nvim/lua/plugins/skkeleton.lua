@@ -4,11 +4,16 @@ return {
             "vim-denops/denops.vim",
             "Shougo/ddc.vim",
             "Shougo/ddc-ui-native",
+			{
+				"delphinus/skkeleton_indicator.nvim",
+				opts = {},
+			}
         },
         config = function()
             vim.fn["skkeleton#config"]({
                 globalDictionaries = { '~/.config/nvim/SKK-JISYO.L' },
                 eggLikeNewline = true,
+				keepMode = true,
             })
             -- vim.fn["ddc#custom#patch_global"]('ui', 'native')
             -- vim.fn["ddc#custom#patch_global"]('sources', { 'skkeleton' })
