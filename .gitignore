@@ -1,3 +1,4 @@
 .git/
 .zsh/
 .zshrc.swp
+nvim/lazy-lock.json
