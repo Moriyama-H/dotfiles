@@ -7,29 +7,21 @@ return {
 			{
 				"delphinus/skkeleton_indicator.nvim",
 				opts = {},
+				event = "InsertEnter",
 			}
         },
         config = function()
             vim.fn["skkeleton#config"]({
-                globalDictionaries = { '~/.config/nvim/SKK-JISYO.L' },
+                globalDictionaries = { '~/.config/nvim/SKK-JISYO.L', 'utf-8'},
                 eggLikeNewline = true,
-				keepMode = true,
+				keepState = true,
+				-- keepMode = true,
             })
-            -- vim.fn["ddc#custom#patch_global"]('ui', 'native')
-            -- vim.fn["ddc#custom#patch_global"]('sources', { 'skkeleton' })
-            -- vim.fn["ddc#custom#patch_global"]({
-            --     sourceOptions = {
-            --         ["skkeleton"] = {
-            --             mark = 'skkeleton',
-            --             matchers = {},
-            --             sorters = {},
-            --             converters = {},
-            --             isVolatile = true,
-            --             minAutoCompleteLength = 1,
-            --         },
-            --     }
-            -- })
-            -- vim.fn["ddc#enable"]()
+
+      		vim.fn["skkeleton#register_kanatable"]("rom", {
+      		  [","] = {"\u{FF0C}", ""},	-- \u{FF0C}（，）
+      		  ["."] = {"\u{FF0E}", ""}, -- \u{FF0E}（．）
+      		})
 			
 			vim.keymap.set({ "i", "c" }, [[<C-j>]], [[<Plug>(skkeleton-toggle)]], { noremap = false })
         end

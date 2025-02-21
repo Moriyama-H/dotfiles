@@ -62,14 +62,16 @@ vim.api.nvim_create_autocmd('TermOpen', {
     end,
 })
 
+-- make command: replace punctuation marks
+-- enable with/without range
+vim.api.nvim_create_user_command("ReplacePunctuation", function(opts)
+  local range = opts.line1 .. "," .. opts.line2
+  vim.cmd(range .. "s/\u{3001}/\u{FF0C}/ge")  -- \u{3001}（、） → \u{FF0C}（，）
+  vim.cmd(range .. "s/\u{3002}/\u{FF0E}/ge")  -- \u{3002}（。） → \u{FF0E}（．）
+end, { range = "%"})
 
--- diagnostic settings
--- -- require('diagflow').setup() -- not well worked
--- vim.g.lsp_diagnostics_enabled = 0  -- Disable LSP diagnostics
--- vim.diagnostic.config({
--- 	virtual_text = false,
--- })
-
--- tiny-inline-diagnostic settings
--- require("tiny-inline-diagnostic").setup()
--- require("lsp_lines").setup()
+vim.api.nvim_create_user_command("ReplacePunctuationReverse", function(opts)
+  local range = opts.line1 .. "," .. opts.line2
+  vim.cmd(range .. "s/\u{FF0C}/\u{3001}/ge")  -- \u{FF0C}（，）→ \u{3001}（、）
+  vim.cmd(range .. "s/\u{FF0E}/\u{3002}/ge")  -- \u{FF0E}（．）→ \u{3002}（。）
+end, { range = "%"})

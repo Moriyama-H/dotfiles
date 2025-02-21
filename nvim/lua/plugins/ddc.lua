@@ -22,7 +22,7 @@ return {
       "shun/ddc-source-vim-lsp",
       "neovim/nvim-lspconfig",
 
-      'vim-skk/skkeleton',
+      -- 'vim-skk/skkeleton',
     },
     config = function()
       vim.fn["ddc#custom#patch_global"]("ui", "native")
@@ -63,6 +63,7 @@ return {
       vim.fn["ddc#enable"]()
 
 	  vim.g.lsp_diagnostics_enabled = 0  -- Disable LSP diagnostics
+
     end,
   },
 }
