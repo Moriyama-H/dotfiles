@@ -30,10 +30,10 @@ return {
 	},
 	messages = {
 		enabled = false,
-		-- view = 'cmdline',
-		-- view_error = 'cmdline',
-		-- view_worn = 'cmdline',
-		-- view_history = 'cmdline',
+		view = 'cmdline',
+		view_error = 'cmdline',
+		view_worn = 'cmdline',
+		view_history = 'cmdline',
 	}
   },
 }
