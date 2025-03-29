@@ -3,4 +3,5 @@ vim.loader.enable()
 -- vim.g['denops#deno'] = '/Users/morihina/.deno/bin/deno' -- echo exepath('deno')
 require("config.lazy")
 require("config.base")
+require("config.clipboard")
 
