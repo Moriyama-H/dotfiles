@@ -1,9 +1,9 @@
 return {
   {
     "lervag/vimtex",
-    lazy = false, -- $BCY1dFI$_9~$_$rL58z2=(B
+    lazy = false, -- 遅延読み込みを無効化
     config = function()
-      vim.g.vimtex_view_method = "skim" -- Skim $B%S%e!<%"$r;HMQ(B
+      vim.g.vimtex_view_method = "skim" -- Skim ビューアを使用
       vim.g.vimtex_compiler_latexmk = {
         options = {
           "-verbose",

@@ -2,20 +2,20 @@ return {
   {
     "Shougo/ddc.vim",
     dependencies = {
-      "vim-denops/denops.vim",  -- $BI,?\0MB8%W%i%0%$%s(B
+      "vim-denops/denops.vim",  -- 必須依存プラグイン
 	  "vim-denops/denops-helloworld.vim",
-      "Shougo/ddc-ui-native",   -- UI $B$N@_Dj(B
-      "Shougo/ddc-source-around", -- $B<~JU$NC18l$rJd408uJd(B
+      "Shougo/ddc-ui-native",   -- UI の設定
+      "Shougo/ddc-source-around", -- 周辺の単語を補完候補
 	  "Shougo/ddc-source-shell-native",
-      -- "Shougo/ddc-source-vim-lsp", -- LSP $BJd40(B
-	  "tani/ddc-fuzzy", -- $B%U%!%8!<8!:w(B
-      -- "Shougo/ddc-filter-matcher_fuzzy", -- $B%U%!%8!<%^%C%A%s%0(B
-      -- "Shougo/ddc-filter-sorter_fuzzy",  -- $B%U%!%8!<%=!<%H(B
-      -- "Shougo/ddc-converter-fuzzy",      -- $B%U%!%8!<JQ49(B
+      -- "Shougo/ddc-source-vim-lsp", -- LSP 補完
+	  "tani/ddc-fuzzy", -- ファジー検索
+      -- "Shougo/ddc-filter-matcher_fuzzy", -- ファジーマッチング
+      -- "Shougo/ddc-filter-sorter_fuzzy",  -- ファジーソート
+      -- "Shougo/ddc-converter-fuzzy",      -- ファジー変換
 	  "Shougo/ddc-filter-matcher_head",
 	  "Shougo/ddc-filter-sorter_rank",
 	  "Shougo/ddc-source-nextword",
-	  "LumaKernel/ddc-source-file",	-- $B%U%!%$%kL>Jd40(B
+	  "LumaKernel/ddc-source-file",	-- ファイル名補完
 
       "prabirshrestha/vim-lsp",
       "mattn/vim-lsp-settings", -- lsp server autoset :LspInstallServer
@@ -27,10 +27,10 @@ return {
     config = function()
       vim.fn["ddc#custom#patch_global"]("ui", "native")
 
-      -- $B;HMQ$9$kJd40%=!<%9(B
+      -- 使用する補完ソース
       vim.fn["ddc#custom#patch_global"]("sources", { "vim-lsp", "around", "file", "skkeleton"})
 
-      -- $B%=!<%9$4$H$N%*%W%7%g%s@_Dj(B
+      -- ソースごとのオプション設定
       vim.fn["ddc#custom#patch_global"]("sourceOptions", {
         _ = {
           matchers = { "matcher_fuzzy" },
@@ -59,7 +59,7 @@ return {
 		},
       })
 
-      -- ddc.vim $B$rM-8z2=(B
+      -- ddc.vim を有効化
       vim.fn["ddc#enable"]()
 
 	  vim.g.lsp_diagnostics_enabled = 0  -- Disable LSP diagnostics
