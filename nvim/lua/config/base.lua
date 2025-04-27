@@ -29,12 +29,12 @@ vim.g.netrw_preview = 1 -- Enable file preview
 -- vim.opt.guicursor = "n-v-c:block,i:ver50,r-cr:hor20,o:hor50" -- ver not worked
 vim.opt.guicursor = "n-v-c:block,i:block,r-cr:hor20,o:hor50"
 
--- $BFCDj$N%U%!%$%k%?%$%W$G%9%Z%k%A%'%C%/$rM-8z2=(B
+-- 特定のファイルタイプでスペルチェックを有効化
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "text", "tex"}, -- $BBP>]$N%U%!%$%k%?%$%W(B
+    pattern = { "markdown", "text", "tex"}, -- 対象のファイルタイプ
     callback = function()
-        vim.opt.spell = true          -- $B%9%Z%k%A%'%C%/$rM-8z2=(B
-        vim.opt.spelllang = {"en", "cjk"}      -- $B%9%Z%k%A%'%C%/$N8@8l!JI,MW$K1~$8$FJQ99!K(B
+        vim.opt.spell = true          -- スペルチェックを有効化
+        vim.opt.spelllang = {"en", "cjk"}      -- スペルチェックの言語（必要に応じて変更）
 		vim.opt.wrap = true		-- Enable wrap
     end,
 })
@@ -66,12 +66,12 @@ vim.api.nvim_create_autocmd('TermOpen', {
 -- enable with/without range
 vim.api.nvim_create_user_command("ReplacePunctuation", function(opts)
   local range = opts.line1 .. "," .. opts.line2
-  vim.cmd(range .. "s/\u{3001}/\u{FF0C}/ge")  -- \u{3001}$B!J!"!K(B $B"*(B \u{FF0C}$B!J!$!K(B
-  vim.cmd(range .. "s/\u{3002}/\u{FF0E}/ge")  -- \u{3002}$B!J!#!K(B $B"*(B \u{FF0E}$B!J!%!K(B
+  vim.cmd(range .. "s/\u{3001}/\u{FF0C}/ge")  -- \u{3001}（、） → \u{FF0C}（，）
+  vim.cmd(range .. "s/\u{3002}/\u{FF0E}/ge")  -- \u{3002}（。） → \u{FF0E}（．）
 end, { range = "%"})
 
 vim.api.nvim_create_user_command("ReplacePunctuationReverse", function(opts)
   local range = opts.line1 .. "," .. opts.line2
-  vim.cmd(range .. "s/\u{FF0C}/\u{3001}/ge")  -- \u{FF0C}$B!J!$!K"*(B \u{3001}$B!J!"!K(B
-  vim.cmd(range .. "s/\u{FF0E}/\u{3002}/ge")  -- \u{FF0E}$B!J!%!K"*(B \u{3002}$B!J!#!K(B
+  vim.cmd(range .. "s/\u{FF0C}/\u{3001}/ge")  -- \u{FF0C}（，）→ \u{3001}（、）
+  vim.cmd(range .. "s/\u{FF0E}/\u{3002}/ge")  -- \u{FF0E}（．）→ \u{3002}（。）
 end, { range = "%"})

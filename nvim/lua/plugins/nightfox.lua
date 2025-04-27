@@ -1,5 +1,5 @@
 return {
 	"EdenEast/nightfox.nvim",
-	lazy = false,    -- $B5/F0;~$KFI$_9~$`(B
-	priority = 1000, -- $BB>$N%W%i%0%$%s$h$j@h$KFI$_9~$`(B
+	lazy = false,    -- 起動時に読み込む
+	priority = 1000, -- 他のプラグインより先に読み込む
 }

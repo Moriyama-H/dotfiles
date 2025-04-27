@@ -20,8 +20,8 @@ return {
             })
 
       		vim.fn["skkeleton#register_kanatable"]("rom", {
-      		  [","] = {"\u{FF0C}", ""},	-- \u{FF0C}$B!J!$!K(B
-      		  ["."] = {"\u{FF0E}", ""}, -- \u{FF0E}$B!J!%!K(B
+      		  [","] = {"\u{FF0C}", ""},	-- \u{FF0C}（，）
+      		  ["."] = {"\u{FF0E}", ""}, -- \u{FF0E}（．）
       		})
 			
 			vim.keymap.set({ "i", "c" }, [[<C-j>]], [[<Plug>(skkeleton-toggle)]], { noremap = false })
