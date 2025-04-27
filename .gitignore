@@ -2,3 +2,6 @@
 .zsh/
 .zshrc.swp
 nvim/lazy-lock.json
+nvim/mocword.sqlite
+nvim/mocword.sqlite:Zone.Identifier
+
