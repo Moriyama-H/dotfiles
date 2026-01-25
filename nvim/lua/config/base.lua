@@ -1,6 +1,6 @@
 local options = {
 	encoding = 'utf-8',
-	fileencodings = {'iso-2022-jp', 'euc-jp', 'sjis', 'utf-8'},
+	fileencodings = {'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis'},
     number=true,
     tabstop=4,
     shiftwidth=4,
@@ -19,7 +19,8 @@ end
 
 -- colorscheme
 -- vim.cmd('colorscheme iceberg')
-vim.cmd('colorscheme tokyonight-day')
+-- vim.cmd('colorscheme tokyonight-day')
+vim.cmd('colorscheme catppuccin-latte')
 
 -- netrw options
 vim.g.netrw_altv = 1 -- Open files in alternative vertical split

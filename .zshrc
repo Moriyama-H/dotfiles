@@ -1,6 +1,7 @@
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
 # Created by newuser for 5.8.1
 
 # setup path for dotfiles
@@ -80,7 +81,7 @@ zle -N zle-keymap-select
 
 ### set imgcat alias
 export PATH=$PATH:$DOTFILES
-# alias imgcat='${DOTFILES}/imgcat'
+alias imgcat='${DOTFILES}/imgcat'
 
 # load local machine settings
 if [ -f ~/.zshrc_local ]; then
